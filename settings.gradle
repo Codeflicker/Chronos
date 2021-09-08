@@ -1,0 +1,3 @@
+include ':Chronos'
+include ':app'
+rootProject.name = "DateRange"
