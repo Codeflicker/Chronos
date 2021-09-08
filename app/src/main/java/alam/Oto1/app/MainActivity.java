@@ -9,7 +9,7 @@ import android.widget.Button;
 import alam.oto1.chronos.callback.DateRangeCallback;
 import alam.oto1.chronos.codex.DateSelector;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DateRangeCallback{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,14 +20,18 @@ public class MainActivity extends AppCompatActivity {
         datePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DateSelector.getInstance().renderDatePicker(MainActivity.this, true, new DateRangeCallback() {
-                    @Override
-                    public void onDateSelected(long startEpoch, long endEpoch) {
+               DateSelector selector = new DateSelector(MainActivity.this).Builder();
+               selector.Build(MainActivity.this);
+               selector.allowFutureDateSelection(false);
+               selector.setButtonColor(R.color.color_primary);
 
-                    }
-                });
             }
         });
+
+    }
+
+    @Override
+    public void onDateSelected(long startEpoch, long endEpoch) {
 
     }
 }
