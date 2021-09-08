@@ -36,7 +36,7 @@ selector.setButtonColor(R.color.color_primary);
 
 ### Import Dependency
 ```
-implementation 'com.github.Codeflicker:Chronos:1.0.0'
+implementation 'com.github.Codeflicker:Chronos:1.0.1'
 ```
 
 
