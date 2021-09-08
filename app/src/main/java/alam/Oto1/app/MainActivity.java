@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         datePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DateSelector.getInstance().renderDatePicker(MainActivity.this, false, new DateRangeCallback() {
+                DateSelector.getInstance().renderDatePicker(MainActivity.this, true, new DateRangeCallback() {
                     @Override
                     public void onDateSelected(long startEpoch, long endEpoch) {
 
